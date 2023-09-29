@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const user = useSupabaseUser()
-
 const navbar = "navbar";
 </script>
 <template>

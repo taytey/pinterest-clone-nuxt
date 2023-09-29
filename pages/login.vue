@@ -7,7 +7,7 @@ const email = ref('')
 const handleLogin = async () => {
   try {
     loading.value = true
-    const { error } = await supabase.auth.signInWithOtp({ email: email.value })
+    const { error } = await supabase.auth.signInWithOtp({ email: email.value, password: password.value })
     if (error) throw error
     alert('Check your email for the login link!')
   } catch (error) {
@@ -49,7 +49,7 @@ const handleLogin = async () => {
                   <input :value="loading ? 'Loading' : 'create account'" :disabled="loading" type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" />
 
                   <p class="text-sm font-light text-zinc-500 dark:text-zinc-400">
-                      Don't have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+                      Don't have an account yet? <a class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
                   </p>
               </form>
           </div>
