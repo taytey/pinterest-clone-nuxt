@@ -1,5 +1,5 @@
 <template>
-    <div class="h-screen bg-zinc-900">
+    <div>
         <h1>Home</h1>
     </div>
 </template>

@@ -1,7 +1,10 @@
-<script>
+<script setup>
+const supabase = useSupabaseClient()
+
+
 </script>
 <template>
-    <div class="h-screen bg-zinc-900">
+    <div>
         <h1>Board</h1>
     </div>
 </template>
