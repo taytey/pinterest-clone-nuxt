@@ -17,4 +17,5 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/supabase',
   ],
+
 })

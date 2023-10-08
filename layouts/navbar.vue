@@ -1,13 +1,33 @@
+<script setup>
+  const client = useSupabaseClient()
+  const user = useSupabaseUser()
+  const router = useRouter()
+
+  const logout = async () => {
+    await client.auth.signOut()
+    router.push('/')
+
+ }
+
+  
+</script>
+
 <template> 
 <nav class="bg-white dark:bg-zinc-900 opacity-50 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
  <h1 class="text-2xl text-white">T A Y T E</h1>
   <div class="hover:transition-all duration-1000 flex md:order-2">
-    <NuxtLink to="/login">
-      
-      <button type="button" class="hover:transition-all duration-1000 text-white bg-zinc-700 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-zinc-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-zinc-600 dark:hover:bg-zinc-700 dark:focus:ring-zinc-800">create account</button>
-  
-    </NuxtLink>
+      <div v-if="!user">
+        <NuxtLink to="/login">
+        <button  type="button" class="hover:transition-all duration-1000 text-white bg-zinc-700 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-zinc-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-zinc-600 dark:hover:bg-zinc-700 dark:focus:ring-zinc-800">create account</button>
+        </NuxtLink>
+      </div>
+      <div v-if="user">
+        <button type="button" @click="logout" class="bg-white hover:transition-all duration-1000 text-white bg-zinc-700 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-zinc-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-zinc-600 dark:hover:bg-zinc-700 dark:focus:ring-zinc-800">
+        Log Out
+       </button>
+      </div>
+   
       
       <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
