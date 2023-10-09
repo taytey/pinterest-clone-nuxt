@@ -20,9 +20,9 @@
     "prisma": "^5.4.1"
   },
   "dependencies": {
+    "@nuxt/image": "^1.0.0-rc.3",
     "@prisma/client": "^5.4.1",
     "@supabase/supabase-js": "^2.36.0",
-    "@yeger/vue-masonry-wall": "^5.0.2",
     "firebase": "^10.4.0",
     "nuxt-proxy": "^0.4.1",
     "postgres": "^3.3.5",
