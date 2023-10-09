@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
       <div v-for="image in images" :key="image.id">
-        <img :src="image.imageSrc" alt="image from database" />
+        <img class="h-auto max-w-full rounded-lg" :src="image.imageSrc" alt="image from database" />
+        
       </div>
     </div>
   </template>
