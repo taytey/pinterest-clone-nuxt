@@ -20,4 +20,8 @@ export default defineNuxtConfig({
     
   ],
 
+  image: {
+    domains: ['https://tceaemmtpjrkvqnscbli.supabase.co']
+  }
+
 })
