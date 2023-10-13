@@ -72,7 +72,8 @@ watch(path, () => {
       <!-- Label associating with the file input above. It allows the click event on the image or the placeholder to open the file selection dialog. -->
       <label for="single" class="cursor-pointer">
         <!-- Image display. If 'src' exists, this image will be shown. Hovering over this will trigger opacity change. -->
-        <img
+        <NuxtImg
+        format="webp" quality="10" sizes="100vw sm:50vw md:400px"
           v-if="src"
           :src="src"
           alt="Avatar"
