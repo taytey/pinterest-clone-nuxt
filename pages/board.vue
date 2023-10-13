@@ -1,5 +1,5 @@
 <template>
-    <div class="py-20 pl-10 pr-10 columns-2 md:columns-5 lg-columns-4">
+    <div class="py-20 lg:pl-10 lg:pr-10 columns-2 md:columns-5 lg-columns-4">
       <div v-for="image in images" :key="image.id" class="mb-4">
             <NuxtImg class="h-auto max-w-full rounded-lg" format="webp" quality="10" sizes="100vw sm:50vw md:400px" :src="image.imageSrc" loading="lazy" />
         </div>

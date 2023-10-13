@@ -1,7 +1,11 @@
 <script setup>
+
+
   const client = useSupabaseClient()
   const user = useSupabaseUser()
   const router = useRouter()
+
+
 
   const logout = async () => {
     await client.auth.signOut()
@@ -26,8 +30,12 @@
         <button type="button" @click="logout" class="bg-white hover:transition-all duration-1000 text-white bg-zinc-700 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-zinc-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-zinc-600 dark:hover:bg-zinc-700 dark:focus:ring-zinc-800">
         Log Out
        </button>
+       
       </div>
-   
+      <button type="button" class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false">
+                  <img class="w-8 h-8 rounded-full" alt="user photo">
+              </button>
+
       
       <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
@@ -44,10 +52,18 @@
       <li>
         <NuxtLink to="/board" class="hover:transition-all duration-1000 block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-zinc-700 md:p-0 md:dark:hover:text-zinc-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">B O A R D</NuxtLink>
       </li>
+      <li>
+       
+      </li>
+      
     </ul>
+    
   </div>
+  
   </div>
+  
 </nav>
 
   <slot />
+  
 </template>
