@@ -49,6 +49,7 @@ const uploadAvatar = async (evt) => {
 
 downloadImage()
 
+
 watch(path, () => {
   if (path.value) {
     downloadImage()
